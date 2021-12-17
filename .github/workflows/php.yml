@@ -35,3 +35,21 @@ jobs:
         script: |
           cd ${{ secrets.PATH }}
           git pull origin
+    - name: Send mail
+      if: always()
+      uses: dawidd6/action-send-mail@v2
+      with:
+        # mail server settings
+        server_address: smtp.mailgun.org
+        server_port: 587
+        # user credentials
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        # email subject
+        subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+        # email body as text
+        body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+        # comma-separated string, send email to
+        to: ankitgsolanki@gmail.com,ronak.ganatra@multidots.com
+        # from email name
+        from: GitHub
