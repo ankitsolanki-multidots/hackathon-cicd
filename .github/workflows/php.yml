@@ -24,11 +24,7 @@ jobs:
       
     - name: Run phpcs
       run: vendor/bin/phpcs --standard=WordPressVIPMinimum wp-content/themes/twentytwentyone/*.php
-
-  deploy:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
+      
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       with:
