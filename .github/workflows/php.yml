@@ -23,4 +23,4 @@ jobs:
         vendor/bin/phpcs -i
       
     - name: Run phpcs
-      run: vendor/bin/phpcs --standard=WordPress wp-content/themes/twentytwentyone/*.php
+      run: vendor/bin/phpcs --standard=WordPressVIPMinimum wp-content/themes/twentytwentyone/*.php
