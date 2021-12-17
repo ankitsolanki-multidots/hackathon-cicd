@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Project Hackthon CI/CD
 
 on:
   push:
